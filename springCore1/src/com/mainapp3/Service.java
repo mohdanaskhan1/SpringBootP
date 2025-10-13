@@ -4,7 +4,11 @@ public class Service {
 
     private DAO dao;//dependency
 
-    public void setDao(DAO dao) {
+//    public void setDao(DAO dao) {
+//        this.dao = dao;
+//    }
+
+    public Service(DAO dao) {
         this.dao = dao;
     }
 

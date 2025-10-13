@@ -4,7 +4,7 @@ import org.springframework.context.support.ClassPathXmlApplicationContext;
 
 public class Launch {
     public static void main(String[] args) {
-        ClassPathXmlApplicationContext ac = new ClassPathXmlApplicationContext("bean1.xml");
+        ClassPathXmlApplicationContext ac = new ClassPathXmlApplicationContext("bean.xml");
 
 
         System.out.println("Raju Account Creation");

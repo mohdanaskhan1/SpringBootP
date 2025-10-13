@@ -4,8 +4,37 @@
        xmlns:util="http://www.springframework.org/schema/util" xsi:schemaLocation="
         http://www.springframework.org/schema/beans http://www.springframework.org/schema/beans/spring-beans.xsd
         http://www.springframework.org/schema/util http://www.springframework.org/schema/util/spring-util.xsd"> <!-- bean definitions here -->
-    <bean id="demo" class="com.mainapp1.Demo" lazy-init="false"/>
-    <bean id="femo" class="com.mainapp1.Femo" lazy-init="true"/>
 
+
+<!--    //mainapp1-->
+<!--    <bean id="demo" class="com.mainapp1.Demo" lazy-init="false"/>-->
+<!--    <bean id="femo" class="com.mainapp1.Femo" lazy-init="true"/>-->
+
+<!--    //mainapp2-->
+<!--    <bean id="accounts" class="com.mainapp2.Accounts" scope="prototype"/>-->
+
+<!--    //mainapp3-->
+<!--    <bean id="dao" class="com.mainapp3.DAO" > </bean>-->
+<!--    <bean id="service" class="com.mainapp3.Service">-->
+<!--        &lt;!&ndash;        <property name="dao" ref="dao"/>&ndash;&gt;-->
+<!--        <constructor-arg name="dao" ref="dao"/>-->
+<!--    </bean>-->
+<!--    <bean id="controller" class="com.mainapp3.Controller">-->
+<!--        &lt;!&ndash;        <property name="service" ref="service"/>&ndash;&gt;-->
+<!--        &lt;!&ndash;        it will call setter of controller&ndash;&gt;-->
+<!--        <constructor-arg name="service" ref="service"/>-->
+<!--    </bean>-->
+
+
+<!--    //mainapp4-->
+    <bean
+            name="employeeBean"
+            class="com.mainapp4.EmployeeBean"
+            init-method="xmlInit"
+            destroy-method="xmlDestroy"
+            scope="prototype"
+    />
+
+<!--    //mainapp5-->
 
 </beans>
