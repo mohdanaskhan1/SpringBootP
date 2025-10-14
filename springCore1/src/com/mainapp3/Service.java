@@ -4,8 +4,8 @@ public class Service {
 
     private DAO dao;//dependency
 
-//    public void setDao(DAO dao) {
-//        this.dao = dao;
+//    public void setDao(Dao Dao) {
+//        this.Dao = Dao;
 //    }
 
     public Service(DAO dao) {

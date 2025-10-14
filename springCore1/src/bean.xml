@@ -14,10 +14,10 @@
 <!--    <bean id="accounts" class="com.mainapp2.Accounts" scope="prototype"/>-->
 
 <!--    //mainapp3-->
-<!--    <bean id="dao" class="com.mainapp3.DAO" > </bean>-->
+<!--    <bean id="Dao" class="com.mainapp3.Dao" > </bean>-->
 <!--    <bean id="service" class="com.mainapp3.Service">-->
-<!--        &lt;!&ndash;        <property name="dao" ref="dao"/>&ndash;&gt;-->
-<!--        <constructor-arg name="dao" ref="dao"/>-->
+<!--        &lt;!&ndash;        <property name="Dao" ref="Dao"/>&ndash;&gt;-->
+<!--        <constructor-arg name="Dao" ref="Dao"/>-->
 <!--    </bean>-->
 <!--    <bean id="controller" class="com.mainapp3.Controller">-->
 <!--        &lt;!&ndash;        <property name="service" ref="service"/>&ndash;&gt;-->
@@ -27,14 +27,53 @@
 
 
 <!--    //mainapp4-->
-    <bean
-            name="employeeBean"
-            class="com.mainapp4.EmployeeBean"
-            init-method="xmlInit"
-            destroy-method="xmlDestroy"
-            scope="prototype"
-    />
+<!--    //xml-->
+<!--    <bean-->
+<!--            name="employeeBean"-->
+<!--            class="com.mainapp4.EmployeeBean"-->
+<!--            init-method="xmlInit"-->
+<!--            destroy-method="xmlDestroy"-->
+<!--            scope="prototype"-->
+<!--    />-->
+
+<!--    //xml+annotation-->
+<!--        <bean name="employeeBean" class="com.mainapp4.EmployeeBean" />-->
+<!--        <bean class="org.springframework.context.annotation.CommonAnnotationBeanPostProcessor"/>-->
+
+<!--    //Callback Inteface-->
+<!--    <bean name="employeeBean" class="com.mainapp4.EmployeeBean" />-->
 
 <!--    //mainapp5-->
+<!--            <bean name="employeeBean" class="com.mainapp5.EmployeeBean">-->
+<!--                <constructor-arg name="companyCode" value="QWERTY"/>-->
+<!--            </bean>-->
+<!--                <bean name="employeeBean" class="com.mainapp5.EmployeeBean" factory-method="customLogic"/>-->
+
+<!--    -->
+<!--    <bean id="fbean" class="com.mainapp5.factoryBeanClass"/>-->
+<!--    <bean name="employeeBean" class="com.mainapp5.EmployeeBean" factory-bean="fbean" factory-method="customLogic"/>-->
+
+
+<!--    //mainapp6-->
+<!--    <bean id="controller" class="com.mainapp6.Controller.Controller">-->
+<!--        <property name="service" ref="service"/>-->
+<!--    </bean>-->
+<!--    <bean id="service" class="com.mainapp6.Service.Service">-->
+<!--        <property name="dao" ref="dao"/>-->
+<!--    </bean>-->
+<!--    <bean id="dao" class="com.mainapp6.Dao.Dao"/>-->
+<!--    <bean id="beanPost" class="com.mainapp6.BeanPost.BeanPostProcessorImplementation"/>-->
+<!--    <bean class="org.springframework.context.annotation.CommonAnnotationBeanPostProcessor"/>-->
+
+
+<!--    //mainapp7-->
+    <bean id="parentBean" abstract="true">
+        <property name="countryCode" value="1"/>
+        <property name="countryName" value="INDIA"/>
+        <property name="Policy" value="PINDIA"/>
+    </bean>
+    <bean id="client" class="com.mainapp7.client.Client" parent="parentBean"/>
+    <bean id="employee" class="com.mainapp7.employee.Employee" parent="parentBean"/>
+    <bean id="student" class="com.mainapp7.student.Student" parent="parentBean"/>
 
 </beans>

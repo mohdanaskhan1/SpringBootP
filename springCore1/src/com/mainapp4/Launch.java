@@ -12,10 +12,6 @@ public class Launch {
         EmployeeBean empB1 = (EmployeeBean) context.getBean("employeeBean");
         empB1.test();
 
-        EmployeeBean empB2 = (EmployeeBean) context.getBean("employeeBean");
-        empB2.test();
-
-        empB2.xmlDestroy();
 
         context.close();
 
