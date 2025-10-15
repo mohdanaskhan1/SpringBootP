@@ -40,7 +40,7 @@
 <!--        <bean name="employeeBean" class="com.mainapp4.EmployeeBean" />-->
 <!--        <bean class="org.springframework.context.annotation.CommonAnnotationBeanPostProcessor"/>-->
 
-<!--    //Callback Inteface-->
+<!--    //Callback Interface-->
 <!--    <bean name="employeeBean" class="com.mainapp4.EmployeeBean" />-->
 
 <!--    //mainapp5-->
@@ -67,13 +67,113 @@
 
 
 <!--    //mainapp7-->
-    <bean id="parentBean" abstract="true">
-        <property name="countryCode" value="1"/>
-        <property name="countryName" value="INDIA"/>
-        <property name="Policy" value="PINDIA"/>
-    </bean>
-    <bean id="client" class="com.mainapp7.client.Client" parent="parentBean"/>
-    <bean id="employee" class="com.mainapp7.employee.Employee" parent="parentBean"/>
-    <bean id="student" class="com.mainapp7.student.Student" parent="parentBean"/>
+<!--    <bean id="parentBean" abstract="true">-->
+<!--        <property name="countryCode" value="1"/>-->
+<!--        <property name="countryName" value="INDIA"/>-->
+<!--        <property name="Policy" value="PINDIA"/>-->
+<!--    </bean>-->
+<!--    <bean id="client" class="com.mainapp7.client.Client" parent="parentBean"/>-->
+<!--    <bean id="employee" class="com.mainapp7.employee.Employee" parent="parentBean"/>-->
+<!--    <bean id="student" class="com.mainapp7.student.Student" parent="parentBean"/>-->
 
+
+<!--    //mainapp8-->
+<!--    <bean id="employee" class="com.mainapp8.Employee">-->
+<!--&lt;!&ndash;        <property name="defaultListOfBooks">&ndash;&gt;-->
+<!--&lt;!&ndash;            <list>&ndash;&gt;-->
+<!--&lt;!&ndash;                <value>JAVA</value>&ndash;&gt;-->
+<!--&lt;!&ndash;                <value>PYTHON</value>&ndash;&gt;-->
+<!--&lt;!&ndash;                <value>C++</value>&ndash;&gt;-->
+<!--&lt;!&ndash;                <value>C#</value>&ndash;&gt;-->
+<!--&lt;!&ndash;            </list>&ndash;&gt;-->
+<!--&lt;!&ndash;        </property>&ndash;&gt;-->
+
+<!--        <constructor-arg name="defaultListOfBooks" ref="list">-->
+<!--&lt;!&ndash;            <list>&ndash;&gt;-->
+<!--&lt;!&ndash;                <value>JAVA</value>&ndash;&gt;-->
+<!--&lt;!&ndash;                <value>PYTHON</value>&ndash;&gt;-->
+<!--&lt;!&ndash;                <value>C++</value>&ndash;&gt;-->
+<!--&lt;!&ndash;                <value>C#</value>&ndash;&gt;-->
+<!--&lt;!&ndash;            </list>&ndash;&gt;-->
+<!--        </constructor-arg>-->
+<!--    </bean>-->
+
+<!--&lt;!&ndash;    //STANDALONE LIST&ndash;&gt;-->
+<!--&lt;!&ndash;    <util:list id="list" list-class="java.util.LinkedList">&ndash;&gt;-->
+<!--&lt;!&ndash;        <value>JAVA</value>&ndash;&gt;-->
+<!--&lt;!&ndash;        <value>PYTHON</value>&ndash;&gt;-->
+<!--&lt;!&ndash;        <value>C++</value>&ndash;&gt;-->
+<!--&lt;!&ndash;        <value>C#</value>&ndash;&gt;-->
+<!--&lt;!&ndash;    </util:list>&ndash;&gt;-->
+
+<!--    <bean id="list" class="java.util.LinkedList">-->
+<!--        <constructor-arg>-->
+<!--            <list>-->
+<!--                <value>A1</value>-->
+<!--                <value>A2</value>-->
+<!--                <value>A3</value>-->
+<!--            </list>-->
+<!--        </constructor-arg>-->
+<!--    </bean>-->
+
+<!--    //mainapp9-->
+<!--    <bean id="acc1" class="com.mainapp9.Account">-->
+<!--        <constructor-arg name="an" value="9090"/>-->
+<!--        <constructor-arg name="username" value="ABC"/>-->
+<!--    </bean>-->
+<!--    <bean id="acc2" class="com.mainapp9.Account">-->
+<!--        <constructor-arg name="an" value="9091"/>-->
+<!--        <constructor-arg name="username" value="DEF"/>-->
+<!--    </bean>-->
+<!--    <bean id="employee" class="com.mainapp9.Employee">-->
+<!--        <constructor-arg name="defaultListOfAccount" ref="list"/>-->
+<!--&lt;!&ndash;        <property name="defaultListOfAccount">&ndash;&gt;-->
+<!--&lt;!&ndash;            <list>&ndash;&gt;-->
+<!--&lt;!&ndash;                <ref bean="acc1"/>&ndash;&gt;-->
+<!--&lt;!&ndash;                <ref bean="acc2"/>&ndash;&gt;-->
+<!--&lt;!&ndash;            </list>&ndash;&gt;-->
+<!--&lt;!&ndash;        </property>&ndash;&gt;-->
+<!--    </bean>-->
+
+<!--&lt;!&ndash;    <util:list id="list" list-class="java.util.LinkedList">&ndash;&gt;-->
+<!--&lt;!&ndash;        <ref bean="acc1"/>&ndash;&gt;-->
+<!--&lt;!&ndash;        <ref bean="acc2"/>&ndash;&gt;-->
+<!--&lt;!&ndash;    </util:list>&ndash;&gt;-->
+
+<!--    <bean id="list" class="java.util.LinkedList">-->
+<!--        <constructor-arg>-->
+<!--            <list>-->
+<!--                <ref bean="acc1"/>-->
+<!--                <ref bean="acc2"/>-->
+<!--            </list>-->
+<!--        </constructor-arg>-->
+<!--    </bean>-->
+
+<!--    //mainapp10-->
+    <bean id="acc1" class="com.mainapp10.Account">
+        <constructor-arg name="accountNumber" value="120"/>
+        <constructor-arg name="accountName" value="Saving"/>
+    </bean>
+    <bean id="acc2" class="com.mainapp10.Account">
+        <constructor-arg name="accountNumber" value="121"/>
+        <constructor-arg name="accountName" value="Saving"/>
+    </bean>
+    <bean id="list" class="java.util.HashSet">
+        <constructor-arg>
+            <list>
+                <ref bean="acc1"/>
+                <ref bean="acc2"/>
+            </list>
+        </constructor-arg>
+    </bean>
+    <bean id="employee" class="com.mainapp10.Employee">
+        <property name="defaultSetOfBooks" >
+            <set>
+                <value>H1</value>
+                <value>H2</value>
+                <value>H3</value>
+            </set>
+        </property>
+        <property name="accounts" ref="list"/>
+    </bean>
 </beans>
