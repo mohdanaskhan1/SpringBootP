@@ -1,6 +1,7 @@
 package com.mainapp10;
 
 import java.awt.print.Book;
+import java.util.Map;
 import java.util.Set;
 
 public class Employee {
@@ -13,9 +14,16 @@ public class Employee {
 
     private Set<Account> Accounts;
 
-//    public Employee(Set<Account> accounts) {
-//        Accounts = accounts;
-//    }
+    private Map<String,String> DefaultMapOfAuthors;
+
+    private Map<String,Author> Author;
+
+    public Employee() {
+    }
+
+    public Employee(Set<Account> accounts) {
+        Accounts = accounts;
+    }
 
     public int getEid() {
         return eid;
@@ -57,6 +65,22 @@ public class Employee {
         Accounts = accounts;
     }
 
+    public Map<String, String> getDefaultMapOfAuthors() {
+        return DefaultMapOfAuthors;
+    }
+
+    public void setDefaultMapOfAuthors(Map<String, String> defaultMapOfAuthors) {
+        DefaultMapOfAuthors = defaultMapOfAuthors;
+    }
+
+    public Map<String, Author> getAuthor() {
+        return Author;
+    }
+
+    public void setAuthor(Map<String, Author> author) {
+        Author = author;
+    }
+
     @Override
     public String toString() {
         return "Employee{" +
@@ -65,6 +89,8 @@ public class Employee {
                 ", age=" + age +
                 ", DefaultSetOfBooks=" + DefaultSetOfBooks +
                 ", Accounts=" + Accounts +
+                ", DefaultMapOfAuthors=" + DefaultMapOfAuthors +
+                ", Author=" + Author +
                 '}';
     }
 }

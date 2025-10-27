@@ -10,7 +10,13 @@ public class Launch {
         employee.setName("Daniel");
         employee.setAge(18);
         System.out.println(employee);
-        System.out.println(employee.getDefaultSetOfBooks().getClass());
-        System.out.println(employee.getAccounts().getClass());
+        System.out.println(employee.getDefaultSetOfBooks() + " -  " + employee.getDefaultSetOfBooks().getClass());
+        System.out.println(employee.getAccounts() + " -  " + employee.getAccounts().getClass());
+
+        System.out.println(employee.getDefaultMapOfAuthors()  + " -  " + employee.getDefaultMapOfAuthors().getClass());
+        System.out.println(employee.getAuthor() + " - " + employee.getAuthor().getClass());
+
+
+
     }
 }

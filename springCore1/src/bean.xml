@@ -150,30 +150,89 @@
 <!--    </bean>-->
 
 <!--    //mainapp10-->
-    <bean id="acc1" class="com.mainapp10.Account">
-        <constructor-arg name="accountNumber" value="120"/>
-        <constructor-arg name="accountName" value="Saving"/>
+
+
+<!--    <bean id="acc1" class="com.mainapp10.Account">-->
+<!--        <constructor-arg name="accountNumber" value="120"/>-->
+<!--        <constructor-arg name="accountName" value="Saving"/>-->
+<!--    </bean>-->
+<!--    <bean id="acc2" class="com.mainapp10.Account">-->
+<!--        <constructor-arg name="accountNumber" value="121"/>-->
+<!--        <constructor-arg name="accountName" value="Saving"/>-->
+<!--    </bean>-->
+<!--    <bean id="list" class="java.util.HashSet">-->
+<!--        <constructor-arg>-->
+<!--            <list>-->
+<!--                <ref bean="acc1"/>-->
+<!--                <ref bean="acc2"/>-->
+<!--            </list>-->
+<!--        </constructor-arg>-->
+<!--    </bean>-->
+
+
+<!--    <bean id="employee" class="com.mainapp10.Employee">-->
+<!--        <property name="defaultSetOfBooks" >-->
+<!--            <set>-->
+<!--                <value>H1</value>-->
+<!--                <value>H2</value>-->
+<!--                <value>H3</value>-->
+<!--            </set>-->
+<!--        </property>-->
+<!--        <property name="accounts" ref="list"/>-->
+
+<!--        <property name="defaultMapOfAuthors">-->
+<!--            <map>-->
+<!--                <entry key="B1" value="A1"/>-->
+<!--                <entry key="B2" value="A2"/>-->
+<!--                <entry key="B3" value="A3"/>-->
+<!--            </map>-->
+<!--        </property>-->
+<!--        <property name="author" ref="map"/>-->
+<!--    </bean>-->
+
+<!--    <bean id="map" class="java.util.HashMap">-->
+<!--        <constructor-arg>-->
+<!--            <map>-->
+<!--                <entry key="HM1" value-ref="hmv1"  />-->
+<!--                <entry key="HM2" value-ref="hmv2" />-->
+<!--            </map>-->
+<!--        </constructor-arg>-->
+<!--    </bean>-->
+<!--    <bean id="hmv1" class="com.mainapp10.Author">-->
+<!--        <constructor-arg name="author1" value="H1"/>-->
+<!--        <constructor-arg name="author2" value="H2"/>-->
+<!--    </bean>-->
+<!--    <bean id="hmv2" class="com.mainapp10.Author">-->
+<!--        <constructor-arg name="author1" value="H1"/>-->
+<!--        <constructor-arg name="author2" value="H2"/>-->
+<!--    </bean>-->
+
+<!--        //mainapp11-->
+
+    <bean id="account" class="com.mainapp11.Account">
+        <constructor-arg name="an" value="9099"/>
+        <constructor-arg name="aName" value="DEF"/>
     </bean>
-    <bean id="acc2" class="com.mainapp10.Account">
-        <constructor-arg name="accountNumber" value="121"/>
-        <constructor-arg name="accountName" value="Saving"/>
+
+    <bean id="aadhar" class="com.mainapp11.Aadhar">
+        <constructor-arg name="aadharNo" value="85748585"/>
+        <constructor-arg name="aadharName" value="DEFG"/>
     </bean>
-    <bean id="list" class="java.util.HashSet">
+
+    <bean id="listofbooks" class="java.util.LinkedList">
         <constructor-arg>
             <list>
-                <ref bean="acc1"/>
-                <ref bean="acc2"/>
+                <value>J1</value>
+                <value>J2</value>
+                <value>J3</value>
             </list>
         </constructor-arg>
     </bean>
-    <bean id="employee" class="com.mainapp10.Employee">
-        <property name="defaultSetOfBooks" >
-            <set>
-                <value>H1</value>
-                <value>H2</value>
-                <value>H3</value>
-            </set>
-        </property>
-        <property name="accounts" ref="list"/>
-    </bean>
+
+    <bean id="employee" class="com.mainapp11.Employee" autowire="byName"/>
+
+
+
+
+
 </beans>
