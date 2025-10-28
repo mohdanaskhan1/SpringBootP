@@ -13,10 +13,6 @@ public class Employee {
     private Aadhar aadhar;
     private List<String> listofbooks;
 
-
-
-
-
     public Account getAccount() {
         return account;
     }
