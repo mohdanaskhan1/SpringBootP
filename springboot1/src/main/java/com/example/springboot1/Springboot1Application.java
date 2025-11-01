@@ -5,6 +5,9 @@ import com.example.springboot1.repository.CrudJPARepository;
 import org.springframework.boot.SpringApplication;
 import org.springframework.boot.autoconfigure.SpringBootApplication;
 import org.springframework.context.ConfigurableApplicationContext;
+import org.springframework.data.domain.Page;
+import org.springframework.data.domain.PageRequest;
+import org.springframework.data.domain.Sort;
 
 import java.util.List;
 import java.util.Optional;
@@ -32,7 +35,7 @@ public class Springboot1Application {
 //        bean.findByName("Soham").forEach(System.out::println);
 //        bean.findById(11).forEach(System.out::println);
 
-//        Employee employee = new Employee(13, "MAX");
+//        Employee employee = new Employee(15, "Dinesh");
 //        bean.save(employee);
 //        System.out.println("Saved Employee");
 
@@ -44,9 +47,30 @@ public class Springboot1Application {
 //            System.out.println("Updated");
 //        }
 
-        bean.deleteById(13);
-        System.out.println("Deleted");
-        bean.findAll().forEach(System.out::println);
+//        bean.deleteById(13);
+//        System.out.println("Deleted");
+//        bean.findAll().forEach(System.out::println);
+
+
+//        bean.findAll(Sort.by("id").descending()).forEach(System.out::println);
+
+//        Page<Employee> all = bean.findAll(PageRequest.of(0, 2));
+//        System.out.println(all.getTotalElements());
+//        System.out.println(all.getTotalPages());
+//        System.out.println(all.getNumber());
+//        System.out.println(all.getSize());
+//        List<Employee> content = all.getContent();
+//        content.forEach(System.out::println);
+
+
+//        bean.insert(16,"Ram");
+//        System.out.println("Updated");
+
+//        bean.delete(13);
+//        System.out.println("Deleted");
+
+//        bean.update("Rahim",12);
+//        System.out.println("Updated");
 
 
 
